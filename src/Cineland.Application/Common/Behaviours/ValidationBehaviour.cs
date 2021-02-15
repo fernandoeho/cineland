@@ -11,7 +11,7 @@ namespace Cineland.Application.Common.Behaviours
     public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
     {
         private IEnumerable<IValidator<TRequest>> _validators;
-        private readonly INotificationHandler<Notification> _notificationHandler;
+        private readonly NotificationHandler _notificationHandler;
 
         public ValidationBehaviour(IEnumerable<IValidator<TRequest>> validators, INotificationHandler<Notification> notificationHandler)
         {
@@ -32,6 +32,8 @@ namespace Cineland.Application.Common.Behaviours
                     {
                         await _notificationHandler.Handle(new Notification(failure.PropertyName, failure.ErrorMessage), cancellationToken);
                     }
+
+                    return default(TResponse);
                 }
             }
 

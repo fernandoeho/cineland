@@ -1,4 +1,4 @@
-using Cineland.Application;
+using Cineland.CrossCutting.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,7 +20,7 @@ namespace Cineland.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddApplication();
+            services.AddServices();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Cineland.API", Version = "v1" });
