@@ -9,7 +9,6 @@ namespace Cineland.Infrastructure.Bus
     public class MediatRBus : IBus
     {
         private readonly IMediator _mediator;
-        private readonly INotificationHandler<Notification> _notificationHandler;
 
         public MediatRBus(IMediator mediator)
         {
