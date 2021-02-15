@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cineland.Application\Cineland.Application.csproj" />
+    <ProjectReference Include="..\Cineland.CrossCutting.IoC\Cineland.CrossCutting.IoC.csproj" />
   </ItemGroup>
 
 </Project>

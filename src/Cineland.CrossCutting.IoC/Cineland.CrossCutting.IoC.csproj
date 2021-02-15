@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cineland.Application\Cineland.Application.csproj" />
+    <ProjectReference Include="..\Cineland.Infrastructure\Cineland.Infrastructure.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
