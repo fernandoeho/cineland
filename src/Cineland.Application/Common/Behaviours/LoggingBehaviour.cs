@@ -21,9 +21,7 @@ namespace Cineland.Application.Common.Behaviours
         {
             var requestName = request.GetType().Name;
 
-            var requestNameWithGuid = $"{requestName}";
-
-            _logger.LogInformation($"[START] {requestNameWithGuid}");
+            _logger.LogInformation($"[START] {requestName}");
             TResponse response;
 
             var stopwatch = Stopwatch.StartNew();
@@ -31,11 +29,11 @@ namespace Cineland.Application.Common.Behaviours
             {
                 try
                 {
-                    _logger.LogInformation($"[PROPS] {requestNameWithGuid} {JsonSerializer.Serialize(request)}");
+                    _logger.LogInformation($"[PROPS] {requestName} {JsonSerializer.Serialize(request)}");
                 }
                 catch (NotSupportedException)
                 {
-                    _logger.LogInformation($"[Serialization ERROR] {requestNameWithGuid} Could not serialize the request.");
+                    _logger.LogInformation($"[Serialization ERROR] {requestName} Could not serialize the request.");
                 }
 
                 response = await next();
@@ -44,7 +42,7 @@ namespace Cineland.Application.Common.Behaviours
             {
                 stopwatch.Stop();
                 _logger.LogInformation(
-                    $"[END] {requestNameWithGuid}; Execution time={stopwatch.ElapsedMilliseconds}ms");
+                    $"[END] {requestName}; Execution time={stopwatch.ElapsedMilliseconds}ms");
             }
 
             return response;
