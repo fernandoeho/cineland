@@ -25,6 +25,7 @@ namespace Cineland.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Cineland.API", Version = "v1" });
             });
+            services.AddHealthChecks();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -45,6 +46,7 @@ namespace Cineland.API
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHealthChecks("/health");
             });
         }
     }
