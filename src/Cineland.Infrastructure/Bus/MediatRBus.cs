@@ -1,7 +1,6 @@
 using System.Threading.Tasks;
 using Cineland.Application.Common.Bus;
 using Cineland.Application.Common.Messaging;
-using Cineland.Application.Common.Messaging.Notifications;
 using MediatR;
 
 namespace Cineland.Infrastructure.Bus
@@ -23,6 +22,11 @@ namespace Cineland.Infrastructure.Bus
         public async Task<bool> RequestAsync<T>(T command) where T : Command
         {
             return await _mediator.Send(command);
+        }
+
+        public async Task<T> RequestAsync<T>(Query<T> query) where T : class
+        {
+            return await _mediator.Send(query);
         }
     }
 }
