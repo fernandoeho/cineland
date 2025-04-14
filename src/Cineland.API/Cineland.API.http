@@ -1,0 +1,6 @@
+@Cineland.API_HostAddress = http://localhost:5028
+
+GET {{Cineland.API_HostAddress}}/api/
+Accept: application/json
+
+###
