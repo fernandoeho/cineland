@@ -1,9 +1,6 @@
-
-using Microsoft.Extensions.DependencyInjection;
-
 namespace Cineland.Application.Mediator;
 
-internal class Mediator : IMediator
+internal sealed class Mediator : IMediator
 {
     private readonly IServiceProvider _serviceProvider;
 
