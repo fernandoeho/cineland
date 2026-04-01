@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Cineland.API/Cineland.API.csproj" />
+    <Project Path="src/Cineland.Application/Cineland.Application.csproj" />
+    <Project Path="src/Cineland.Domain/Cineland.Domain.csproj" />
+    <Project Path="src/Cineland.Infrastructure/Cineland.Infrastructure.csproj" />
+  </Folder>
+</Solution>
